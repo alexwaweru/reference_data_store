@@ -1,0 +1,10 @@
+[project]
+name = "reference-data-store"
+version = "0.1.0"
+description = "Scripts that turn upstream reference data (ESCO, NAICS, dr5hn locations, Hipo universities) into framework-agnostic seed JSON."
+readme = "README.md"
+requires-python = ">=3.14"
+dependencies = [
+    "numpy>=2.4.6",
+    "openpyxl>=3.1.5",
+]

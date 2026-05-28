@@ -1,0 +1,122 @@
+[
+  {
+    "code": "11",
+    "title": "Agriculture, Forestry, Fishing and Hunting",
+    "level": "sector",
+    "parent_code": null
+  },
+  {
+    "code": "21",
+    "title": "Mining, Quarrying, and Oil and Gas Extraction",
+    "level": "sector",
+    "parent_code": null
+  },
+  {
+    "code": "22",
+    "title": "Utilities",
+    "level": "sector",
+    "parent_code": null
+  },
+  {
+    "code": "23",
+    "title": "Construction",
+    "level": "sector",
+    "parent_code": null
+  },
+  {
+    "code": "31-33",
+    "title": "Manufacturing",
+    "level": "sector",
+    "parent_code": null
+  },
+  {
+    "code": "42",
+    "title": "Wholesale Trade",
+    "level": "sector",
+    "parent_code": null
+  },
+  {
+    "code": "44-45",
+    "title": "Retail Trade",
+    "level": "sector",
+    "parent_code": null
+  },
+  {
+    "code": "48-49",
+    "title": "Transportation and Warehousing",
+    "level": "sector",
+    "parent_code": null
+  },
+  {
+    "code": "51",
+    "title": "Information",
+    "level": "sector",
+    "parent_code": null
+  },
+  {
+    "code": "52",
+    "title": "Finance and Insurance",
+    "level": "sector",
+    "parent_code": null
+  },
+  {
+    "code": "53",
+    "title": "Real Estate and Rental and Leasing",
+    "level": "sector",
+    "parent_code": null
+  },
+  {
+    "code": "54",
+    "title": "Professional, Scientific, and Technical Services",
+    "level": "sector",
+    "parent_code": null
+  },
+  {
+    "code": "55",
+    "title": "Management of Companies and Enterprises",
+    "level": "sector",
+    "parent_code": null
+  },
+  {
+    "code": "56",
+    "title": "Administrative and Support and Waste Management and Remediation Services",
+    "level": "sector",
+    "parent_code": null
+  },
+  {
+    "code": "61",
+    "title": "Educational Services",
+    "level": "sector",
+    "parent_code": null
+  },
+  {
+    "code": "62",
+    "title": "Health Care and Social Assistance",
+    "level": "sector",
+    "parent_code": null
+  },
+  {
+    "code": "71",
+    "title": "Arts, Entertainment, and Recreation",
+    "level": "sector",
+    "parent_code": null
+  },
+  {
+    "code": "72",
+    "title": "Accommodation and Food Services",
+    "level": "sector",
+    "parent_code": null
+  },
+  {
+    "code": "81",
+    "title": "Other Services (except Public Administration)",
+    "level": "sector",
+    "parent_code": null
+  },
+  {
+    "code": "92",
+    "title": "Public Administration",
+    "level": "sector",
+    "parent_code": null
+  }
+]
