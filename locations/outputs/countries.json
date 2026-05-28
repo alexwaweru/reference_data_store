@@ -53,8 +53,8 @@
     "population": 43844000,
     "gdp": null,
     "area_sq_km": 647500,
-    "postal_code_format": "####",
-    "postal_code_regex": "^(\\d{4})$"
+    "postal_code_format": null,
+    "postal_code_regex": null
   },
   {
     "id": 2,
@@ -453,7 +453,7 @@
     "gdp": null,
     "area_sq_km": 102,
     "postal_code_format": "AI-####",
-    "postal_code_regex": "^(AI-?\\d{4})$"
+    "postal_code_regex": "^(?:AZ)*(\\d{4})$"
   },
   {
     "id": 9,
@@ -1588,8 +1588,8 @@
     "population": 64055,
     "gdp": null,
     "area_sq_km": 53,
-    "postal_code_format": "@@ ##|@@ @@",
-    "postal_code_regex": "^([A-Z]{2}\\s?[A-Z0-9]{2})$"
+    "postal_code_format": "@@ ##",
+    "postal_code_regex": "^([A-Z]{2}\\d{2})$"
   },
   {
     "id": 26,
@@ -1645,8 +1645,8 @@
     "population": 784043,
     "gdp": 3422,
     "area_sq_km": 47000,
-    "postal_code_format": "#####",
-    "postal_code_regex": "^(\\d{5})$"
+    "postal_code_format": null,
+    "postal_code_regex": null
   },
   {
     "id": 27,
@@ -2146,7 +2146,7 @@
     "gdp": null,
     "area_sq_km": 60,
     "postal_code_format": "BBND 1ZZ",
-    "postal_code_regex": "^(BBND\\s?1ZZ)$"
+    "postal_code_regex": "BBND 1ZZ"
   },
   {
     "id": 33,
@@ -2430,8 +2430,8 @@
     "population": 17577760,
     "gdp": 49799,
     "area_sq_km": 181040,
-    "postal_code_format": "######",
-    "postal_code_regex": "^(\\d{6})$"
+    "postal_code_format": "#####",
+    "postal_code_regex": "^(\\d{5})$"
   },
   {
     "id": 38,
@@ -2734,7 +2734,7 @@
     "gdp": 2225341,
     "area_sq_km": 9984670,
     "postal_code_format": "@#@ #@#",
-    "postal_code_regex": "^([ABCEGHJKLMNPRSTVXY]\\d[ABCEGHJKLMNPRSTVWXYZ])(?: ?(\\d[ABCEGHJKLMNPRSTVWXYZ]\\d))?$"
+    "postal_code_regex": "^([ABCEGHJKLMNPRSTVXY]\\d[ABCEGHJKLMNPRSTVWXYZ]) ?(\\d[ABCEGHJKLMNPRSTVWXYZ]\\d)$"
   },
   {
     "id": 40,
@@ -2847,8 +2847,8 @@
     "population": 84738,
     "gdp": null,
     "area_sq_km": 262,
-    "postal_code_format": "KY#-####",
-    "postal_code_regex": "^KY\\d-\\d{4}$"
+    "postal_code_format": null,
+    "postal_code_regex": null
   },
   {
     "id": 42,
@@ -4147,8 +4147,8 @@
     "population": 18103660,
     "gdp": 125677,
     "area_sq_km": 283560,
-    "postal_code_format": "######",
-    "postal_code_regex": "^(\\d{6})$"
+    "postal_code_format": "@####@",
+    "postal_code_regex": "^([a-zA-Z]\\d{4}[a-zA-Z])$"
   },
   {
     "id": 65,
@@ -4604,7 +4604,7 @@
     "gdp": null,
     "area_sq_km": 12173,
     "postal_code_format": "FIQQ 1ZZ",
-    "postal_code_regex": "^(FIQQ\\s?1ZZ)$"
+    "postal_code_regex": "FIQQ 1ZZ"
   },
   {
     "id": 72,
@@ -5016,8 +5016,8 @@
     "population": null,
     "gdp": null,
     "area_sq_km": 7829,
-    "postal_code_format": "#####",
-    "postal_code_regex": "^(\\d{5})$"
+    "postal_code_format": null,
+    "postal_code_regex": null
   },
   {
     "id": 79,
@@ -5728,8 +5728,8 @@
     "population": 64781,
     "gdp": null,
     "area_sq_km": 78,
-    "postal_code_format": "@# #@@|@## #@@|@@# #@@|@@## #@@|@#@ #@@|@@#@ #@@|@@# #@@|GIR0AA",
-    "postal_code_regex": "^GIR\\s?0AA$|^[A-Z]{1,2}(?:[0-9][0-9A-Z]?)?(?:\\s?[0-9][A-Z]{2})?$"
+    "postal_code_format": "@# #@@|@## #@@|@@# #@@|@@## #@@|@#@ #@@|@@#@ #@@|GIR0AA",
+    "postal_code_regex": "^((?:(?:[A-PR-UWYZ][A-HK-Y]\\d[ABEHMNPRV-Y0-9]|[A-PR-UWYZ]\\d[A-HJKPS-UW0-9])\\s\\d[ABD-HJLNP-UW-Z]{2})|GIR\\s?0AA)$"
   },
   {
     "id": 92,
@@ -6432,8 +6432,8 @@
     "population": 85961000,
     "gdp": 341013,
     "area_sq_km": 1648000,
-    "postal_code_format": "#####|##########",
-    "postal_code_regex": "^(\\d{5}(?:\\d{5})?)$"
+    "postal_code_format": "##########",
+    "postal_code_regex": "^(\\d{10})$"
   },
   {
     "id": 104,
@@ -6888,8 +6888,8 @@
     "population": 103267,
     "gdp": null,
     "area_sq_km": 116,
-    "postal_code_format": "@# #@@|@## #@@|@@# #@@|@@## #@@|@#@ #@@|@@#@ #@@|@@# #@@|GIR0AA",
-    "postal_code_regex": "^GIR\\s?0AA$|^[A-Z]{1,2}(?:[0-9][0-9A-Z]?)?(?:\\s?[0-9][A-Z]{2})?$"
+    "postal_code_format": "@# #@@|@## #@@|@@# #@@|@@## #@@|@#@ #@@|@@#@ #@@|GIR0AA",
+    "postal_code_regex": "^((?:(?:[A-PR-UWYZ][A-HK-Y]\\d[ABEHMNPRV-Y0-9]|[A-PR-UWYZ]\\d[A-HJKPS-UW0-9])\\s\\d[ABD-HJLNP-UW-Z]{2})|GIR\\s?0AA)$"
   },
   {
     "id": 111,
@@ -7219,8 +7219,8 @@
     "population": 1585566,
     "gdp": 11274,
     "area_sq_km": 10908,
-    "postal_code_format": "#####",
-    "postal_code_regex": "^(\\d{5})$"
+    "postal_code_format": null,
+    "postal_code_regex": null
   },
   {
     "id": 117,
@@ -8309,8 +8309,8 @@
     "population": 84530,
     "gdp": null,
     "area_sq_km": 572,
-    "postal_code_format": "@# #@@|@## #@@|@@# #@@|@@## #@@|@#@ #@@|@@#@ #@@|@@# #@@|GIR0AA",
-    "postal_code_regex": "^GIR\\s?0AA$|^[A-Z]{1,2}(?:[0-9][0-9A-Z]?)?(?:\\s?[0-9][A-Z]{2})?$"
+    "postal_code_format": "@# #@@|@## #@@|@@# #@@|@@## #@@|@#@ #@@|@@#@ #@@|GIR0AA",
+    "postal_code_regex": "^((?:(?:[A-PR-UWYZ][A-HK-Y]\\d[ABEHMNPRV-Y0-9]|[A-PR-UWYZ]\\d[A-HJKPS-UW0-9])\\s\\d[ABD-HJLNP-UW-Z]{2})|GIR\\s?0AA)$"
   },
   {
     "id": 137,
@@ -8374,7 +8374,7 @@
     "gdp": 297,
     "area_sq_km": 181,
     "postal_code_format": "#####-####",
-    "postal_code_regex": "^969\\d{2}(?:-\\d{4})?$"
+    "postal_code_regex": "^969\\d{2}(-\\d{4})$"
   },
   {
     "id": 138,
@@ -8544,8 +8544,8 @@
     "population": 1243741,
     "gdp": 15495,
     "area_sq_km": 2040,
-    "postal_code_format": "#####",
-    "postal_code_regex": "^(\\d{5})$"
+    "postal_code_format": null,
+    "postal_code_regex": null
   },
   {
     "id": 141,
@@ -8989,8 +8989,8 @@
     "population": 3544835,
     "gdp": 25804,
     "area_sq_km": 1565000,
-    "postal_code_format": "#####",
-    "postal_code_regex": "^(\\d{5})$"
+    "postal_code_format": "######",
+    "postal_code_regex": "^(\\d{6})$"
   },
   {
     "id": 147,
@@ -9280,8 +9280,8 @@
     "population": 51316756,
     "gdp": 64944,
     "area_sq_km": 678500,
-    "postal_code_format": "#######",
-    "postal_code_regex": "^(\\d{7})$"
+    "postal_code_format": "#####",
+    "postal_code_regex": "^(\\d{5})$"
   },
   {
     "id": 152,
@@ -9337,8 +9337,8 @@
     "population": 3022401,
     "gdp": 14214,
     "area_sq_km": 825418,
-    "postal_code_format": "#####",
-    "postal_code_regex": "^(\\d{5})$"
+    "postal_code_format": null,
+    "postal_code_regex": null
   },
   {
     "id": 153,
@@ -9395,7 +9395,7 @@
     "gdp": 169,
     "area_sq_km": 21,
     "postal_code_format": "NRU68",
-    "postal_code_regex": "^(NRU68)$"
+    "postal_code_regex": "NRU68"
   },
   {
     "id": 154,
@@ -9508,8 +9508,8 @@
     "population": 18080943,
     "gdp": 1272011,
     "area_sq_km": 41526,
-    "postal_code_format": "####|#### @@",
-    "postal_code_regex": "^(\\d{4}(?:\\s?[A-Za-z]{2})?)$"
+    "postal_code_format": "#### @@",
+    "postal_code_regex": "^(\\d{4}\\s?[a-zA-Z]{2})$"
   },
   {
     "id": 157,
@@ -10441,8 +10441,8 @@
     "population": 4064780,
     "gdp": 91675,
     "area_sq_km": 78200,
-    "postal_code_format": "@####",
-    "postal_code_regex": "^([A-Z]\\d{4})$"
+    "postal_code_format": "#####",
+    "postal_code_regex": "^(\\d{5})$"
   },
   {
     "id": 171,
@@ -10562,8 +10562,8 @@
     "population": 6109644,
     "gdp": 45465,
     "area_sq_km": 406750,
-    "postal_code_format": "####|######",
-    "postal_code_regex": "^(\\d{4}|\\d{6})$"
+    "postal_code_format": "####",
+    "postal_code_regex": "^(\\d{4})$"
   },
   {
     "id": 173,
@@ -10734,7 +10734,7 @@
     "gdp": null,
     "area_sq_km": 47,
     "postal_code_format": "PCRN 1ZZ",
-    "postal_code_regex": "^(PCRN\\s?1ZZ)$"
+    "postal_code_regex": "PCRN 1ZZ"
   },
   {
     "id": 176,
@@ -11434,8 +11434,8 @@
     "population": 5651,
     "gdp": null,
     "area_sq_km": 410,
-    "postal_code_format": "STHL 1ZZ|ASCN 1ZZ|TDCU 1ZZ",
-    "postal_code_regex": "^((?:STHL|ASCN|TDCU)\\s?1ZZ)$"
+    "postal_code_format": "STHL 1ZZ",
+    "postal_code_regex": "^(STHL1ZZ)$"
   },
   {
     "id": 185,
@@ -11662,8 +11662,8 @@
     "population": 110872,
     "gdp": 1242,
     "area_sq_km": 389,
-    "postal_code_format": "VC####",
-    "postal_code_regex": "^VC\\d{4}$"
+    "postal_code_format": null,
+    "postal_code_regex": null
   },
   {
     "id": 189,
@@ -12571,8 +12571,8 @@
     "population": 19655000,
     "gdp": 12994,
     "area_sq_km": 637657,
-    "postal_code_format": "@@ ##### or ####|#####",
-    "postal_code_regex": "^([A-Z]{2}\\s*\\d{5}|\\d{4,5})$"
+    "postal_code_format": "@@  #####",
+    "postal_code_regex": "^([A-Z]{2}\\d{5})$"
   },
   {
     "id": 204,
@@ -12686,7 +12686,7 @@
     "gdp": null,
     "area_sq_km": 3903,
     "postal_code_format": "SIQQ 1ZZ",
-    "postal_code_regex": "^(SIQQ\\s?1ZZ)$"
+    "postal_code_regex": "SIQQ 1ZZ"
   },
   {
     "id": 116,
@@ -13326,8 +13326,8 @@
     "population": 23337936,
     "gdp": 804889,
     "area_sq_km": 35980,
-    "postal_code_format": "###|#####|######",
-    "postal_code_regex": "^(\\d{3}(?:\\d{2,3})?)$"
+    "postal_code_format": "#####",
+    "postal_code_regex": "^(\\d{5})$"
   },
   {
     "id": 217,
@@ -13440,8 +13440,8 @@
     "population": 68153004,
     "gdp": 85977,
     "area_sq_km": 945087,
-    "postal_code_format": "#####",
-    "postal_code_regex": "^(\\d{5})$"
+    "postal_code_format": null,
+    "postal_code_regex": null
   },
   {
     "id": 219,
@@ -13896,8 +13896,8 @@
     "population": 1368333,
     "gdp": 26467,
     "area_sq_km": 5128,
-    "postal_code_format": "######",
-    "postal_code_regex": "^(\\d{6})$"
+    "postal_code_format": null,
+    "postal_code_regex": null
   },
   {
     "id": 224,
@@ -14125,7 +14125,7 @@
     "gdp": null,
     "area_sq_km": 430,
     "postal_code_format": "TKCA 1ZZ",
-    "postal_code_regex": "^(TKCA\\s?1ZZ)$"
+    "postal_code_regex": "^(TKCA 1ZZ)$"
   },
   {
     "id": 228,
@@ -14431,7 +14431,7 @@
     "gdp": 3839180,
     "area_sq_km": 244820,
     "postal_code_format": "@# #@@|@## #@@|@@# #@@|@@## #@@|@#@ #@@|@@#@ #@@|GIR0AA",
-    "postal_code_regex": "^([Gg][Ii][Rr]\\s?0[Aa]{2})$|^([A-Za-z]{1,2}(?:[0-9][0-9A-Za-z]?(?:\\s?[0-9][A-Za-z]{2})?)?)$"
+    "postal_code_regex": "^([Gg][Ii][Rr]\\s?0[Aa]{2})|((([A-Za-z][0-9]{1,2})|(([A-Za-z][A-Ha-hJ-Yj-y][0-9]{1,2})|(([A-Za-z][0-9][A-Za-z])|([A-Za-z][A-Ha-hJ-Yj-y][0-9]?[A-Za-z]))))\\s?[0-9][A-Za-z]{2})$"
   },
   {
     "id": 233,
@@ -14747,8 +14747,8 @@
     "population": null,
     "gdp": null,
     "area_sq_km": 0,
-    "postal_code_format": "#####",
-    "postal_code_regex": "^(\\d{5})$"
+    "postal_code_format": null,
+    "postal_code_regex": null
   },
   {
     "id": 235,
@@ -15153,8 +15153,8 @@
     "population": 39471,
     "gdp": null,
     "area_sq_km": 153,
-    "postal_code_format": "VG####",
-    "postal_code_regex": "^VG\\d{4}$"
+    "postal_code_format": null,
+    "postal_code_regex": null
   },
   {
     "id": 242,

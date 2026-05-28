@@ -1,23 +1,22 @@
 """
 Location reference-data fetcher.
 
-Downloads the dr5hn/countries-states-cities-database JSON files, normalizes the
-shape into something stable, and writes them to ./outputs/ for any downstream
+Downloads JSON files from alexwaweru/countries-states-cities-database, normalizes
+the shape into something stable, and writes them to ./outputs/ for any downstream
 consumer (Prisma, Drizzle, SQLAlchemy, …) to seed.
 
 Source:
-    https://github.com/dr5hn/countries-states-cities-database
+    https://github.com/alexwaweru/countries-states-cities-database
 
 Outputs (./outputs/):
     regions.json       — ~6 rows  (continents)
     subregions.json    — ~22 rows
     countries.json     — 250 rows
     states.json        — ~5,000 rows (states / provinces / regions)
-    cities.json        — ~150,000 rows (LARGE; skipped by default)
+    cities.json        — ~150,000 rows
 
 Usage:
-    python locations/fetch.py                    # fetches everything except cities
-    python locations/fetch.py --include-cities   # add cities (multi-minute fetch)
+    python locations/fetch.py                    # fetches everything including cities
     python locations/fetch.py --only countries
     python locations/fetch.py --force            # re-fetch even if outputs exist
 
@@ -44,7 +43,7 @@ logger = logging.getLogger("locations.fetch")
 ROOT = Path(__file__).parent
 OUTPUTS = ROOT / "outputs"
 
-BASE_URL = "https://raw.githubusercontent.com/dr5hn/countries-states-cities-database/master/json"
+BASE_URL = "https://raw.githubusercontent.com/alexwaweru/countries-states-cities-database/master/json"
 
 # Map of step → (remote filename, output filename). Order matters: regions
 # must be fetched before countries so the region-name → id lookup is available.
@@ -182,7 +181,13 @@ def normalize_state(s: dict[str, Any]) -> dict[str, Any]:
     }
 
 
-def normalize_city(c: dict[str, Any]) -> dict[str, Any] | None:
+def normalize_city(
+    c: dict[str, Any],
+    state_id: int,
+    state_code: str,
+    country_id: int,
+    country_code: str,
+) -> dict[str, Any] | None:
     """Cities without coordinates are dropped — they're useless for geo queries."""
     lat = _float_or_none(c.get("latitude"))
     lon = _float_or_none(c.get("longitude"))
@@ -191,10 +196,10 @@ def normalize_city(c: dict[str, Any]) -> dict[str, Any] | None:
     return {
         "id": c["id"],
         "name": c["name"],
-        "state_id": c.get("state_id"),
-        "state_code": c.get("state_code"),
-        "country_id": c.get("country_id"),
-        "country_code": c.get("country_code"),
+        "state_id": state_id,
+        "state_code": state_code,
+        "country_id": country_id,
+        "country_code": country_code,
         "latitude": lat,
         "longitude": lon,
         "type": c.get("type"),
@@ -267,15 +272,19 @@ def run(steps: set[str], force: bool) -> None:
         write_json(OUTPUTS / "states.json", states)
 
     if "cities" in steps and should_build(OUTPUTS / "cities.json", force):
-        raw = fetch_json("cities.json")
+        # Cities are nested inside countries+states+cities.json: country → state → city[]
+        raw_countries = fetch_json("countries+states+cities.json")
         cities: list[dict[str, Any]] = []
         skipped = 0
-        for c in raw:
-            normalized = normalize_city(c)
-            if normalized is None:
-                skipped += 1
-                continue
-            cities.append(normalized)
+        for country in raw_countries:
+            for state in country.get("states") or []:
+                s_code = state.get("state_code") or state.get("iso2") or ""
+                for c in state.get("cities") or []:
+                    normalized = normalize_city(c, state["id"], s_code, country["id"], country["iso2"])
+                    if normalized is None:
+                        skipped += 1
+                        continue
+                    cities.append(normalized)
         logger.info("Cities: %d kept, %d skipped (missing coords)", len(cities), skipped)
         write_json(OUTPUTS / "cities.json", cities)
 
@@ -288,11 +297,6 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
         action="append",
         help="Run only the given step(s). May be passed multiple times. Default: everything except cities.",
     )
-    parser.add_argument(
-        "--include-cities",
-        action="store_true",
-        help="Include the (large) cities dataset. Ignored if --only is set.",
-    )
     parser.add_argument("--force", action="store_true", help="Rebuild outputs even if they exist.")
     return parser.parse_args(argv)
 
@@ -304,7 +308,7 @@ def main(argv: list[str] | None = None) -> int:
     if args.only:
         steps = set(args.only)
     else:
-        steps = set(STEP_NAMES) - ({"cities"} if not args.include_cities else set())
+        steps = set(STEP_NAMES)
 
     run(steps=steps, force=args.force)
     return 0
