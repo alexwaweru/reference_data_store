@@ -1,0 +1,248 @@
+[
+  {
+    "code": "00",
+    "name": "Generic programmes and qualifications",
+    "level": "broad",
+    "parent_code": null
+  },
+  {
+    "code": "01",
+    "name": "Education",
+    "level": "broad",
+    "parent_code": null
+  },
+  {
+    "code": "02",
+    "name": "Arts and humanities",
+    "level": "broad",
+    "parent_code": null
+  },
+  {
+    "code": "03",
+    "name": "Social sciences, journalism and information",
+    "level": "broad",
+    "parent_code": null
+  },
+  {
+    "code": "04",
+    "name": "Business, administration and law",
+    "level": "broad",
+    "parent_code": null
+  },
+  {
+    "code": "05",
+    "name": "Natural sciences, mathematics and statistics",
+    "level": "broad",
+    "parent_code": null
+  },
+  {
+    "code": "06",
+    "name": "Information and communication technologies",
+    "level": "broad",
+    "parent_code": null
+  },
+  {
+    "code": "07",
+    "name": "Engineering, manufacturing and construction",
+    "level": "broad",
+    "parent_code": null
+  },
+  {
+    "code": "08",
+    "name": "Agriculture, forestry, fisheries and veterinary",
+    "level": "broad",
+    "parent_code": null
+  },
+  {
+    "code": "09",
+    "name": "Health and welfare",
+    "level": "broad",
+    "parent_code": null
+  },
+  {
+    "code": "10",
+    "name": "Services",
+    "level": "broad",
+    "parent_code": null
+  },
+  {
+    "code": "001",
+    "name": "Basic programmes and qualifications",
+    "level": "narrow",
+    "parent_code": "00"
+  },
+  {
+    "code": "002",
+    "name": "Literacy and numeracy",
+    "level": "narrow",
+    "parent_code": "00"
+  },
+  {
+    "code": "003",
+    "name": "Personal skills and development",
+    "level": "narrow",
+    "parent_code": "00"
+  },
+  {
+    "code": "011",
+    "name": "Education",
+    "level": "narrow",
+    "parent_code": "01"
+  },
+  {
+    "code": "021",
+    "name": "Arts",
+    "level": "narrow",
+    "parent_code": "02"
+  },
+  {
+    "code": "022",
+    "name": "Humanities (except languages)",
+    "level": "narrow",
+    "parent_code": "02"
+  },
+  {
+    "code": "023",
+    "name": "Languages",
+    "level": "narrow",
+    "parent_code": "02"
+  },
+  {
+    "code": "031",
+    "name": "Social and behavioural sciences",
+    "level": "narrow",
+    "parent_code": "03"
+  },
+  {
+    "code": "032",
+    "name": "Journalism and information",
+    "level": "narrow",
+    "parent_code": "03"
+  },
+  {
+    "code": "041",
+    "name": "Business and administration",
+    "level": "narrow",
+    "parent_code": "04"
+  },
+  {
+    "code": "042",
+    "name": "Law",
+    "level": "narrow",
+    "parent_code": "04"
+  },
+  {
+    "code": "051",
+    "name": "Biological and related sciences",
+    "level": "narrow",
+    "parent_code": "05"
+  },
+  {
+    "code": "052",
+    "name": "Environment",
+    "level": "narrow",
+    "parent_code": "05"
+  },
+  {
+    "code": "053",
+    "name": "Physical sciences",
+    "level": "narrow",
+    "parent_code": "05"
+  },
+  {
+    "code": "054",
+    "name": "Mathematics and statistics",
+    "level": "narrow",
+    "parent_code": "05"
+  },
+  {
+    "code": "061",
+    "name": "Information and communication technologies",
+    "level": "narrow",
+    "parent_code": "06"
+  },
+  {
+    "code": "071",
+    "name": "Engineering and engineering trades",
+    "level": "narrow",
+    "parent_code": "07"
+  },
+  {
+    "code": "072",
+    "name": "Manufacturing and processing",
+    "level": "narrow",
+    "parent_code": "07"
+  },
+  {
+    "code": "073",
+    "name": "Architecture and construction",
+    "level": "narrow",
+    "parent_code": "07"
+  },
+  {
+    "code": "081",
+    "name": "Agriculture",
+    "level": "narrow",
+    "parent_code": "08"
+  },
+  {
+    "code": "082",
+    "name": "Forestry",
+    "level": "narrow",
+    "parent_code": "08"
+  },
+  {
+    "code": "083",
+    "name": "Fisheries",
+    "level": "narrow",
+    "parent_code": "08"
+  },
+  {
+    "code": "084",
+    "name": "Veterinary",
+    "level": "narrow",
+    "parent_code": "08"
+  },
+  {
+    "code": "091",
+    "name": "Health",
+    "level": "narrow",
+    "parent_code": "09"
+  },
+  {
+    "code": "092",
+    "name": "Welfare",
+    "level": "narrow",
+    "parent_code": "09"
+  },
+  {
+    "code": "101",
+    "name": "Personal services",
+    "level": "narrow",
+    "parent_code": "10"
+  },
+  {
+    "code": "102",
+    "name": "Hygiene and occupational health services",
+    "level": "narrow",
+    "parent_code": "10"
+  },
+  {
+    "code": "103",
+    "name": "Security services",
+    "level": "narrow",
+    "parent_code": "10"
+  },
+  {
+    "code": "104",
+    "name": "Transport services",
+    "level": "narrow",
+    "parent_code": "10"
+  },
+  {
+    "code": "108",
+    "name": "Interdisciplinary programmes and qualifications involving services",
+    "level": "narrow",
+    "parent_code": "10"
+  }
+]

@@ -1,0 +1,110 @@
+[
+  {
+    "id": 1,
+    "isced_level": 1,
+    "code": "ISCED-1",
+    "name": "Primary education",
+    "label": "Primary school certificate",
+    "examples": [
+      "Primary school leaving certificate",
+      "FSLC"
+    ]
+  },
+  {
+    "id": 2,
+    "isced_level": 2,
+    "code": "ISCED-2",
+    "name": "Lower secondary education",
+    "label": "O levels / Junior Certificate",
+    "examples": [
+      "O levels",
+      "GCSE",
+      "BECE",
+      "BEPC",
+      "Junior Certificate"
+    ]
+  },
+  {
+    "id": 3,
+    "isced_level": 3,
+    "code": "ISCED-3",
+    "name": "Upper secondary education",
+    "label": "A levels / Senior Certificate",
+    "examples": [
+      "A levels",
+      "WASSCE",
+      "Baccalauréat",
+      "Matura",
+      "Senior Certificate"
+    ]
+  },
+  {
+    "id": 4,
+    "isced_level": 4,
+    "code": "ISCED-4",
+    "name": "Post-secondary non-tertiary education",
+    "label": "Technical / Vocational certificate",
+    "examples": [
+      "National Vocational Certificate",
+      "City & Guilds",
+      "Technical certificate",
+      "Vocational diploma"
+    ]
+  },
+  {
+    "id": 5,
+    "isced_level": 5,
+    "code": "ISCED-5",
+    "name": "Short-cycle tertiary education",
+    "label": "Associate degree / HND",
+    "examples": [
+      "Associate degree",
+      "HND",
+      "Foundation degree",
+      "DUT"
+    ]
+  },
+  {
+    "id": 6,
+    "isced_level": 6,
+    "code": "ISCED-6",
+    "name": "Bachelor's or equivalent level",
+    "label": "Bachelor's degree / Graduate",
+    "examples": [
+      "BSc",
+      "BA",
+      "BEng",
+      "LLB",
+      "BTech"
+    ]
+  },
+  {
+    "id": 7,
+    "isced_level": 7,
+    "code": "ISCED-7",
+    "name": "Master's or equivalent level",
+    "label": "Master's degree / Postgraduate",
+    "examples": [
+      "MSc",
+      "MA",
+      "MBA",
+      "MEng",
+      "LLM",
+      "Postgraduate diploma"
+    ]
+  },
+  {
+    "id": 8,
+    "isced_level": 8,
+    "code": "ISCED-8",
+    "name": "Doctoral or equivalent level",
+    "label": "PhD / Doctorate",
+    "examples": [
+      "PhD",
+      "DPhil",
+      "EdD",
+      "MD (research)",
+      "Professional doctorate"
+    ]
+  }
+]

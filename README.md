@@ -9,6 +9,10 @@ reference datasets a typical job-marketplace / career-platform needs:
 - **Institutions** — ~10,000 universities worldwide, with their email/web
   domains.
 - **Sectors & industries** — the full NAICS 2022 5-level taxonomy.
+- **Qualifications** — 8 education levels (ISCED 2011), from primary through
+  doctorate, with practical labels like "A levels" and "Postgraduate".
+- **Fields of study** — 41 academic fields (ISCED-F 2013): 11 broad fields and
+  30 narrow fields, from Arts & Humanities to Engineering & Construction.
 
 Python is used **only for scripting**. Each domain folder has a small Python
 script that fetches the upstream source, normalizes the shape, and writes
@@ -30,13 +34,13 @@ Hibernate, anything that reads JSON) seed their database from those files.
 │
 ├── locations/
 │   ├── README.md                          ← schema + seeding recipes for locations
-│   ├── fetch.py                           ← downloads dr5hn/countries-states-cities-database
+│   ├── fetch.py                           ← downloads alexwaweru/countries-states-cities-database
 │   └── outputs/
 │       ├── regions.json                   ← 6 records
 │       ├── subregions.json                ← 22 records
 │       ├── countries.json                 ← 250 records
 │       ├── states.json                    ← ~5,300 records
-│       └── cities.json                    ← ~150k records (opt-in)
+│       └── cities.json                    ← ~154k records
 │
 ├── esco_taxonomy/
 │   ├── README.md                          ← schema, seeding, matching, BYO embeddings
@@ -53,12 +57,24 @@ Hibernate, anything that reads JSON) seed their database from those files.
 │   └── outputs/
 │       └── universities.json              ← ~10,000 records
 │
-└── sectors/
-    ├── README.md                          ← schema + how to tag companies / jobs
-    ├── fetch.py                           ← downloads NAICS 2022 from census.gov
+├── sectors/
+│   ├── README.md                          ← schema + how to tag companies / jobs
+│   ├── fetch.py                           ← downloads NAICS 2022 from census.gov
+│   └── outputs/
+│       ├── sectors.json                   ← 20 top-level sectors
+│       └── industries.json                ← ~2,125 records across all 5 NAICS levels
+│
+├── qualifications/
+│   ├── README.md                          ← schema + seeding + ISCED level map
+│   ├── build.py                           ← emits ISCED 2011 levels (hardcoded, no fetch)
+│   └── outputs/
+│       └── qualifications.json            ← 8 records (ISCED levels 1-8)
+│
+└── fields_of_study/
+    ├── README.md                          ← schema + seeding + full ISCED-F code table
+    ├── build.py                           ← emits ISCED-F 2013 fields (hardcoded, no fetch)
     └── outputs/
-        ├── sectors.json                   ← 20 top-level sectors
-        └── industries.json                ← ~2,125 records across all 5 NAICS levels
+        └── fields_of_study.json           ← 41 records (11 broad + 30 narrow fields)
 ```
 
 **The JSON files in each `outputs/` directory are the only contract this repo
@@ -73,10 +89,12 @@ directories) is implementation detail.
 uv sync                                                  # installs numpy + openpyxl
 
 python tools/decompress.py                               # inflate large .gz artifacts (run once after clone)
-python locations/fetch.py                                # ~30s (skips cities by default)
+python locations/fetch.py                                # ~5-10 min (includes cities)
 python esco_taxonomy/build.py                            # ~1 minute (reads inputs/)
 python universities/fetch.py                             # ~5s
 python sectors/fetch.py                                  # ~5s
+python qualifications/build.py                           # instant (hardcoded ISCED 2011)
+python fields_of_study/build.py                          # instant (hardcoded ISCED-F 2013)
 ```
 
 All scripts are idempotent — re-running them is a no-op unless you pass
@@ -165,6 +183,8 @@ json.NewDecoder(gz).Decode(&skills)
 | **ESCO taxonomy** | Resume parsing → normalized occupation / skill URIs. Semantic matching ("Python backend dev" → ESCO occupation). Skill-overlap ranking of applicants per job. |
 | **Institutions** | Education history dropdowns. **Verifying a user is a real student / alumnus by matching their email domain against the institution's domain list.** Fuzzy university search. |
 | **Sectors & industries** | Tagging companies and job postings with NAICS codes. Filtering by sector. Industry-based ranking signal. |
+| **Qualifications** | User profile "highest qualification" field. Job posting "minimum qualification" filter. ISCED level comparisons (`isced_level >= 6` for graduate-and-above). |
+| **Fields of study** | Education history tagging. Job posting field-of-study filters. Narrow-to-broad roll-up queries (e.g. any ICT narrow field → broad field `06`). |
 
 Each folder's README has the detailed schema, the seeding recipe (with Prisma
 / Django / SQLAlchemy snippets), and the canonical query patterns.
@@ -224,6 +244,8 @@ worker_education
   worker_id → users.id
   university_id → universities.id          -- from universities/
   verified_via_email_domain BOOL           -- see universities/README.md
+  qualification_id → qualifications.id     -- from qualifications/
+  field_of_study_code → fields_of_study.code  -- from fields_of_study/
   country_code → location_country.iso2
 
 worker_experience
@@ -240,6 +262,8 @@ worker_skills
 job_postings
   industry_code → industries.code
   city_id → location_city.id
+  min_qualification_id → qualifications.id
+  field_of_study_code → fields_of_study.code
 
 job_required_skills
   job_id, skill_uri → skills.concept_uri, relation_type
